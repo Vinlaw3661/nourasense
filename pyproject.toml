@@ -1,0 +1,20 @@
+[project]
+name = "nourasense"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Vinlaw Mudehwe", email = "vmudehwe3661@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.12.5",
+    "python-dateutil>=2.9.0.post0",
+]
+
+[project.scripts]
+nourasense = "nourasense:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
