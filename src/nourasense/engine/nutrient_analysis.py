@@ -1,4 +1,5 @@
 from src.nourasense.data.dri_tables import VITAMINS, MINERALS, MACRONUTRIENTS
+from src.nourasense.engine.child import Child
 
 VITAMINS_TABLE = VITAMINS
 MINERALS_TABLE = MINERALS
@@ -47,9 +48,9 @@ def get_age_group(age,gender):
         raise ValueError("Gender must be 'm' or 'f'") from e
         
 class Nutrition:
-    def __init__(self,age,gender):
-        self.child_age = age
-        self.child_gender = gender
+    def __init__(self, child: Child):
+        self.child_age = child.age
+        self.child_gender = child.gender
         self.recommendations = {}
 
     def get_recommendations(self):

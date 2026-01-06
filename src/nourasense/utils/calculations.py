@@ -1,4 +1,4 @@
-from src.nourasense.engine.child import ChildData
+from src.nourasense.engine.child import Child
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import math
@@ -62,7 +62,7 @@ def calculate_measurement(L, M, S, Z):
 
     return X
 
-def calculate_deltas(child_data: ChildData, lms):
+def calculate_deltas(child: Child, lms):
     
     deltas = {}
 
@@ -72,16 +72,16 @@ def calculate_deltas(child_data: ChildData, lms):
         optimal = calculate_measurement(L, M, S, Z=0)
 
         if key == "weight_for_height" or key == "weight_for_age":
-            current = child_data.weight
+            current = child.weight
         
         elif key == "height_for_age":
-            current = child_data.height
+            current = child.height
 
         elif key == "head_circumference_for_age":
-            current = child_data.head_circumference
+            current = child.head_circumference
 
         elif key == "bmi_for_age":
-            current = child_data.bmi
+            current = child.bmi
 
         delta = current - optimal
 
