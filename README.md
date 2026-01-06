@@ -40,7 +40,7 @@ A comprehensive child nutrition and growth assessment tool that provides WHO-sta
 
 ## Quick Start
 
-The code shown below
+The code shown below is extracted from `demo.py` so you can run that script to see its results.
 
 ```python
 from nourasense import Nourasense, ChildData, DiagnosisResult
